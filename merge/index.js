@@ -24,16 +24,19 @@ const config = {
 
 const colors = ['blue','red','green'];
 
+//******************************mergeMap() ************************************* 
 Rx.Observable.from(colors)
     .mergeMap(color=>config[color])
     .subscribe(a=>console.log(a));
 
+//******************************merge() *************************************    
 // bluePostFeed
 //     .merge(
 //         redHeraldFeed
 //     )
 //     .subscribe(a=>console.log(a));
 
+// *****************************mergeAll()************************************
 // Rx.Observable.of(
 //     bluePostFeed,
 //     redHeraldFeed,
