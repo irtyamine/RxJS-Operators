@@ -1,5 +1,8 @@
 import Rx from 'rxjs';
-
+/******************************To run this file : webpack-dev-server***************************************
+ 1. go to browser => localhost:8080
+ 2. search for combineLatest
+*/
 const countryObservable = Rx.Observable.fromEvent(
     document.getElementById('country'),
     "change",
@@ -12,6 +15,7 @@ const cityObservable = Rx.Observable.fromEvent(
     e=>e.target.value
 );
 
+// It always emits the latest combine value
 Rx.Observable.combineLatest(
     countryObservable,
     cityObservable
