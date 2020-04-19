@@ -1,5 +1,9 @@
 import Rx from 'rxjs';
-
+/*
+ Note: Interview Question => Diff between concat and merge
+ 1. concat() => Until source Observable will not get finish , it wont execute provided Observable. It maintains sequence.
+ 2. merge() => It randomly execute any Observable . It does not maintain any sequence. 
+*/
 const bluePostFeed = Rx.Observable
     .interval(1000)
     .map(n=>`Blue Post Article #${n}`);
@@ -20,16 +24,19 @@ const config = {
 
 const colors = ['blue','red','green'];
 
+//******************************mergeMap() ************************************* 
 Rx.Observable.from(colors)
     .mergeMap(color=>config[color])
     .subscribe(a=>console.log(a));
 
+//******************************merge() *************************************    
 // bluePostFeed
 //     .merge(
 //         redHeraldFeed
 //     )
 //     .subscribe(a=>console.log(a));
 
+// *****************************mergeAll()************************************
 // Rx.Observable.of(
 //     bluePostFeed,
 //     redHeraldFeed,

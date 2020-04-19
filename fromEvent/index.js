@@ -1,5 +1,7 @@
 import Rx from 'rxjs';
 
+/******************************To run this file : webpack-dev-server***************************************
+*/
 Rx.Observable.fromEvent(document.forms[0],'submit')
     .do(()=>console.log("Prevent refresh"))
     .subscribe(e=>e.preventDefault());

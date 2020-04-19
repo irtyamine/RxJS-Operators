@@ -1,8 +1,10 @@
 import Rx from 'rxjs';
-
+/* Note:
+   1. empty() method never emits anything
+*/
 Rx.Observable
     .empty()
     .subscribe({
-        complete:a=>console.log("COMPLEEEEEAAAT",a),
-        next:a=>console.log("EMITTT",a)
+        next:a=>console.log("next() ==",a),
+        complete:a=>console.log("complete() ==",a)
     });

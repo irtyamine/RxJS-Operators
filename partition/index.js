@@ -1,5 +1,8 @@
 import Rx from 'rxjs';
+/* 
+ Note: When u have requirement of grouping data into multiple group then use partition()
 
+*/
 const [even,odds] = Rx.Observable
     .range(1,20)
     .partition(n=>n % 2 == 0);

@@ -15,5 +15,5 @@ const customObservable = Rx.Observable.create(observer=>{
 customObservable
     .subscribe({
         next:a=>console.log("NEXT!",a),
-        complete:b=>console.log("COMPLETE",b)
+        complete:b=>console.log("COMPLETE")
     });

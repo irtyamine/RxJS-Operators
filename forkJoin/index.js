@@ -10,6 +10,7 @@ const preferencesAPI = Rx.Observable
     .concatAll()
     // .mapTo({theme:"dark"});
 
+// Note: Any one API throws an error ,forkJoin will get stop. 
 Rx.Observable.forkJoin(
     friendAPI,
     preferencesAPI
