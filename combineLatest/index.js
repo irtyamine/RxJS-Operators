@@ -21,3 +21,9 @@ Rx.Observable.combineLatest(
     cityObservable
 )
 .subscribe(a=>console.log(a));
+
+
+// --------OutPut: It is an Array output--------------------
+// ["India", "Mumbai"]
+// ["India", "New Delhi"]
+// ["Canada", "New Delhi"]
